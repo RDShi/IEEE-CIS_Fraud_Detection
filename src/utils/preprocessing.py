@@ -37,7 +37,7 @@ def encoding_obj(df, ec_feat = None, not_ec_feat = []):
     if ec_feat==None:
         ec_feat = list(df)
     
-    for col in list(df):
+    for col in ec_feat:
         if (col not in not_ec_feat) and df[col].dtype=='O':
             print(col)
             df[col] = df[col].fillna('unseen_before_label')
